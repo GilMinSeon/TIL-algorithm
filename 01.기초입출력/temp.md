@@ -45,7 +45,7 @@ for i in range(a, b+1):
 print(sum)
 ```
 
-### 2-1) 합을 구하는 과정과 sum값 출력
+### 2-1) 합을 구하는 과정과 sum값 출력 
 
 - 안 좋은 예
 ```python
