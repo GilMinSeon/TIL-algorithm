@@ -70,9 +70,11 @@ for i in range(a, b):
 print(f'{b} = ', end='')
 sum += b
 
+
+for i in range(a,b):
+	ab
 print(sum)
 ```
-
 
 
 
