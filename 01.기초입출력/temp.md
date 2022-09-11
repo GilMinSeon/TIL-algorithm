@@ -72,7 +72,7 @@ sum += b
 
 
 for i in range(a,b):
-	ab
+	ab.   
 print(sum)
 ```
 
