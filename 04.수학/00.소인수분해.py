@@ -17,7 +17,7 @@ def factorize2(n):
 
 #print(factorize2(17))
 
-
+# 간단한 방법
 def factorization(x):
     d = 2
     while d <= x:   # 이 코드는 d**2 해주면 안됨, 왜냐면 5나 17인 경우 자기자신까지 돌아야 출력가능 so, 거듭제곱으로 주면 안됨! 즉 d+=1해서 d가 5가 되고나서 d가 6될때 while문 탈출
