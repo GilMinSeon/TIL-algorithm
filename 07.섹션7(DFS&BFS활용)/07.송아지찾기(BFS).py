@@ -20,11 +20,12 @@ while dq:
     # 일단 큐 맨 앞에서 하나 빼기!!!
     now = dq.popleft()
 
-    # next 만들기 전에 체크!
+    # next 만들기 전에 답인지 체크!
     if now == m:
         print(dis[now])
         break
-   
+    
+    # 문제의 조건 적기 next는 3가지로 뻗어나감 => 가지 생성
     for next in (now-1, now+1, now+5):
         # 좌표안에서만 돌아야함!
         if 0 < next <= MAX:
