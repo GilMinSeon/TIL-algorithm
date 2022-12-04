@@ -1,25 +1,21 @@
-def DFS(L, s):
-    global cnt
-    if L == m:
-        for j in range(L):
-            print(res[j], end = ' ')
-            arr.append(res[j])
-        cnt += 1
-        print()
-    else:
-        for i in range(s, n+1):
-            res[L] = i
-            DFS(L+1, i+1)
+import itertools as it
 
-if __name__ == "__main__":
-    n, m = map(int, input().split())
-    res = [0] * m
-    
-    arr = []
+n = int(input())
+arr_n = [x for x in range(1, n+1)]
+arr = [list(map(int,input().split())) for _ in range(n)]
+res = []
+for x in it.combinations(arr_n, n//2):
+    combi = list(x)
+    sum = 0
+    for y in it.combinations(combi, 2):
+        sum += arr[y[0]-1][y[1]-1]
+        sum += arr[y[1]-1][y[0]-1]
+    res.append(sum)
 
-    cnt = 0
-    DFS(0, 1)
-    print(cnt)
+min_val = 2147000000
 
-    print(arr)
-    #for i in range(cnt//2):
+for i in range(len(res)//2):
+    min_val = min(abs(res[i] - res[len(res) - i - 1]), min_val)
+
+print(min_val)
+
