@@ -13,6 +13,8 @@ for i in range(m):
     #g[a][b] = 1
     g[a].append(b)
 
+print(g)
+
 def BFS(v):
     global cnt
 
