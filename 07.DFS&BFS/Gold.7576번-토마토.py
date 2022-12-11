@@ -105,10 +105,11 @@ else:
             if board[i][j] == 0:
                 print(-1)
                 flag2 = False
-                sys.exit(0)#........ 제발 ㅠㅠㅠㅠㅠ 이런거 어떻게 해야해 진짜~~~~ ㅠㅠㅠㅠㅠㅠ 이런거 어떻게 알아야해 ㅠㅠㅠㅠ
+                sys.exit(0)#제발 ㅠㅠㅠㅠㅠ 이런거 어떻게 알아야해 ㅠㅠㅠㅠ
     if flag2 == True:
         print(res_day-1)
 '''
+
 # 계속 틀렸던 이유
 '''
 6 4
