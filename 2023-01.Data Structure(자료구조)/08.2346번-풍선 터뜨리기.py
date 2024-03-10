@@ -8,44 +8,43 @@ for idx, val in enumerate(tmp):
 
 cur = 0
 res = []
-for x in range(n):
+
+for case in range(n):
     i, j = arr.pop(cur)
 
-    #print('i==>', i, 'j===>', j, 'cur===>', cur)
-
-    #i, j = arr[cur]
     res.append(i)
-    #print(i, j, cur)
 
-    if len(arr) == 1:
-        res.append(arr[0][0])
+    if len(arr) == 0:
         break
+    
+    # j값으로 분기하는게 아니라 현재 cur에서 j만큼 갔을때의 "값"과 len(arr) 비교해서 분기
+    print('j===>', j, 'len===>', len(arr), 'cur===>', cur)
+    if cur + j > len(arr):
+        # 오른쪽으로 인덱스 넘는 경우
+        print('case 1')
+        cur = cur % len(arr)
+
+    elif cur + j < 0:
+        # 왼쪽으로 인덱스 넘는 경우 -> 이 경우에 무조건 양수 인덱스로 바꿔줘야함!
+        print('case 2')
 
 
-    if j > 0:
-        # j가 양수일때
-        if j > len(arr):
-            cur = cur % len(arr)
-        elif len(arr) == j:
-            cur = 0
-        else:
-            cur += (j-1)
+    elif cur + j == 0:
+        pass
+        print('case4')
 
     else:
-        # j가 음수일때
-        if abs(j) >= len(arr) and cur > abs(j):
-            cur = len(arr) + j + cur
-            # 2 -1 +2 3
-        else:
-            #print('x===>', x, 'cur===>', cur, 'j=====>', j)
-            cur += j
+        print('case3')
+        cur += (j-1)
 
-    if cur < 0:
-        cur = len(arr) - 1
 
-    #print('변한 cur--->', cur)
-    
+    print('변한 cur:::::', cur)
+    print(res)
+
+
 print(*res)
+
+
 
 '''
 5
@@ -60,5 +59,11 @@ print(*res)
 2 2 2 2
     
 정답: 1 3 2 4
-출력: 1 4 3 2 
+'''
+
+'''
+5
+-5 -5 -5 -5 -5
+
+정답: 1 5 3 2 4
 '''
